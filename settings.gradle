@@ -1,0 +1,2 @@
+rootProject.name = "Klicker"
+include ':app'
