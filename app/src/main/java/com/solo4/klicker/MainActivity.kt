@@ -3,6 +3,9 @@ package com.solo4.klicker
 import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
 import android.widget.Toast
+import com.solo4.klicker.Constants.ENEMY_EASY
+import com.solo4.klicker.Constants.ENEMY_HARD
+import com.solo4.klicker.Constants.ENEMY_MEDIUM
 import com.solo4.klicker.databinding.ActivityMainBinding
 
 class MainActivity : AppCompatActivity() {
@@ -16,19 +19,36 @@ class MainActivity : AppCompatActivity() {
         setContentView(view)
 
         binding.easyButton.setOnClickListener {
-            Toast.makeText(applicationContext, "EASY", Toast.LENGTH_LONG).show()
+            openFragment(ENEMY_EASY)
         }
 
         binding.mediumButton.setOnClickListener {
-            Toast.makeText(applicationContext, "MEDIUM", Toast.LENGTH_LONG).show()
+            openFragment(ENEMY_MEDIUM)
         }
 
         binding.hardButton.setOnClickListener {
-            Toast.makeText(applicationContext, "HARD", Toast.LENGTH_LONG).show()
+            openFragment(ENEMY_HARD)
         }
 
     }
 
+    private fun openFragment(enemyComplexity: Int) {
+        when (enemyComplexity) {
+            ENEMY_EASY -> {
+                supportFragmentManager.beginTransaction()
+                    .add(R.id.mobsFragmentContainer, EasyMobsFragment::class.java, null)
+                    .addToBackStack("")
+                    .commit()
+            }
 
+            ENEMY_MEDIUM -> {
+                Toast.makeText(applicationContext, "MEDIUM", Toast.LENGTH_LONG).show()
+            }
+
+            ENEMY_HARD -> {
+                Toast.makeText(applicationContext, "HARD", Toast.LENGTH_LONG).show()
+            }
+        }
+    }
 
 }
