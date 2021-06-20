@@ -3,12 +3,11 @@
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    android:background="@null"
-    tools:context=".EasyMobsFragment">
+    tools:context=".ui.EasyMobsFragment">
 
-    <ImageView
+    <androidx.viewpager2.widget.ViewPager2
+        android:id="@+id/enemiesEasy"
         android:layout_width="match_parent"
-        android:layout_height="match_parent"
-        android:src="@drawable/enemy_easy_rabbit" />
+        android:layout_height="match_parent" />
 
 </FrameLayout>

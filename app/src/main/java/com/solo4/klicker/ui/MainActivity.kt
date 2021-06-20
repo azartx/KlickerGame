@@ -1,11 +1,12 @@
-package com.solo4.klicker
+package com.solo4.klicker.ui
 
 import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
 import android.widget.Toast
-import com.solo4.klicker.Constants.ENEMY_EASY
-import com.solo4.klicker.Constants.ENEMY_HARD
-import com.solo4.klicker.Constants.ENEMY_MEDIUM
+import com.solo4.klicker.R
+import com.solo4.klicker.utils.Constants.ENEMY_EASY
+import com.solo4.klicker.utils.Constants.ENEMY_HARD
+import com.solo4.klicker.utils.Constants.ENEMY_MEDIUM
 import com.solo4.klicker.databinding.ActivityMainBinding
 
 class MainActivity : AppCompatActivity() {

@@ -1,4 +1,4 @@
-package com.solo4.klicker
+package com.solo4.klicker.utils
 
 object Constants {
 
