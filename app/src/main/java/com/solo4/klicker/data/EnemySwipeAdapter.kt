@@ -1,19 +1,25 @@
 package com.solo4.klicker.data
 
+import android.content.Context
 import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
 import android.widget.ImageView
 import androidx.recyclerview.widget.RecyclerView
 import com.solo4.klicker.R
+import kotlinx.coroutines.*
 
 class EnemySwipeAdapter(private var enemyPreviewClickListener: OnEnemyPreviewClickListener) :
     RecyclerView.Adapter<EnemySwipeAdapter.PagerViewHolder>() {
 
-    private val enemies = mutableListOf<Enemy>().apply {
-        /*add(Enemy("Заяц", "Заяц", R.drawable.enemy_easy_rabbit, 1.1, 1.1, 1.1, false))
-        add(Enemy("шото ам", "шото ам", R.drawable.enemy_easy_bear, 1.1, 1.1, 1.1, false))
-        add(Enemy("мишаня босс", "мишаня босс", R.drawable.enemy_easy_boss, 1.1, 1.1, 1.1, false))*/
+    private var enemies = mutableListOf<Enemy>()
+
+    fun enemiesFromDb(level: Int, context: Context) {
+        MainScope().launch {
+            val repository = EnemiesDbRepository(context)
+            enemies = repository.getEnemiesListByLevel(level) as MutableList<Enemy>
+            notifyDataSetChanged()
+        }
     }
 
     override fun onCreateViewHolder(parent: ViewGroup, viewType: Int) = PagerViewHolder(

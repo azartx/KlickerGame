@@ -17,7 +17,7 @@ class ArenaActivity : AppCompatActivity() {
 
         val obj: Enemy = intent.extras?.get(ARENA_ENEMY_LINK) as Enemy
 
-        binding.testText.text = obj.description
+        binding.testText.text = resources.getString(obj.description)
 
     }
 }

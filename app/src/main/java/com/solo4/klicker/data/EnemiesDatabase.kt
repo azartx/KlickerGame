@@ -12,7 +12,10 @@ abstract class EnemiesDatabase : RoomDatabase() {
     companion object {
         fun init(context: Context) =
             Room.databaseBuilder(context, EnemiesDatabase::class.java, "EnemiesDatabase")
-                .fallbackToDestructiveMigration().build()
+                .createFromAsset("databases/EnemiesDatabase.db")
+                .fallbackToDestructiveMigration()
+                .allowMainThreadQueries()
+                .build()
 
     }
 }

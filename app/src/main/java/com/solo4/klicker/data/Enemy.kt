@@ -8,6 +8,7 @@ import androidx.room.PrimaryKey
 
 @Entity
 data class Enemy(
+    @ColumnInfo var level: Int,
     @ColumnInfo var name: Int,
     @ColumnInfo var description: Int,
     @ColumnInfo var image: Int,
@@ -25,6 +26,7 @@ data class Enemy(
         parcel.readInt(),
         parcel.readInt(),
         parcel.readInt(),
+        parcel.readInt(),
         parcel.readDouble(),
         parcel.readDouble(),
         parcel.readDouble(),
@@ -35,6 +37,7 @@ data class Enemy(
     }
 
     override fun writeToParcel(parcel: Parcel, flags: Int) {
+        parcel.writeInt(level)
         parcel.writeInt(name)
         parcel.writeInt(description)
         parcel.writeInt(image)

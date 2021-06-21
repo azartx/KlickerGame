@@ -3,7 +3,6 @@ package com.solo4.klicker.ui
 import android.content.Intent
 import android.os.Bundle
 import android.view.View
-import android.widget.Toast
 import androidx.fragment.app.Fragment
 import com.solo4.klicker.data.EnemySwipeAdapter
 import com.solo4.klicker.R
@@ -16,7 +15,7 @@ class EasyMobsFragment : Fragment(R.layout.easy_mobs_fragment) {
 
     private lateinit var viewModel: EasyMobsViewModel
     private lateinit var binding: EasyMobsFragmentBinding
-    private lateinit var adapter: EnemySwipeAdapter
+    private lateinit var easyEnemyPreviewAdapter: EnemySwipeAdapter
     private lateinit var onEnemyPreviewClickListener: EnemySwipeAdapter.OnEnemyPreviewClickListener
 
     override fun onViewCreated(view: View, savedInstanceState: Bundle?) {
@@ -39,8 +38,9 @@ class EasyMobsFragment : Fragment(R.layout.easy_mobs_fragment) {
                 )
             }
         }
-        adapter = EnemySwipeAdapter(onEnemyPreviewClickListener)
-        binding.enemiesEasy.adapter = adapter
+        easyEnemyPreviewAdapter = EnemySwipeAdapter(onEnemyPreviewClickListener)
+        easyEnemyPreviewAdapter.enemiesFromDb(1, view.context)
+        binding.enemiesEasy.adapter = easyEnemyPreviewAdapter
 
     }
 
