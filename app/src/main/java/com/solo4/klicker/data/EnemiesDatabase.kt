@@ -8,9 +8,11 @@ import androidx.room.RoomDatabase
 @Database(entities = [Enemy::class], version = 1)
 abstract class EnemiesDatabase : RoomDatabase() {
     abstract fun getEnemiesDao(): EnemiesDao
-    //companion object?
-    fun init(context: Context) =
-        Room.databaseBuilder(context, EnemiesDatabase::class.java, "EnemiesDatabase")
-            .fallbackToDestructiveMigration().build()
 
+    companion object {
+        fun init(context: Context) =
+            Room.databaseBuilder(context, EnemiesDatabase::class.java, "EnemiesDatabase")
+                .fallbackToDestructiveMigration().build()
+
+    }
 }

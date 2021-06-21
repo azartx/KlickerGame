@@ -11,9 +11,9 @@ class EnemySwipeAdapter(private var enemyPreviewClickListener: OnEnemyPreviewCli
     RecyclerView.Adapter<EnemySwipeAdapter.PagerViewHolder>() {
 
     private val enemies = mutableListOf<Enemy>().apply {
-        add(Enemy("Заяц", "Заяц", R.drawable.enemy_easy_rabbit, 1.1, 1.1, 1.1, false))
+        /*add(Enemy("Заяц", "Заяц", R.drawable.enemy_easy_rabbit, 1.1, 1.1, 1.1, false))
         add(Enemy("шото ам", "шото ам", R.drawable.enemy_easy_bear, 1.1, 1.1, 1.1, false))
-        add(Enemy("мишаня босс", "мишаня босс", R.drawable.enemy_easy_boss, 1.1, 1.1, 1.1, false))
+        add(Enemy("мишаня босс", "мишаня босс", R.drawable.enemy_easy_boss, 1.1, 1.1, 1.1, false))*/
     }
 
     override fun onCreateViewHolder(parent: ViewGroup, viewType: Int) = PagerViewHolder(

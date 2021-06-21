@@ -8,12 +8,13 @@ import androidx.room.PrimaryKey
 
 @Entity
 data class Enemy(
-    @ColumnInfo var name: String,
-    @ColumnInfo var description: String,
+    @ColumnInfo var name: Int,
+    @ColumnInfo var description: Int,
     @ColumnInfo var image: Int,
     @ColumnInfo var defaultGold: Double,
     @ColumnInfo var attack: Double,
-    @ColumnInfo var armor: Double,
+    @ColumnInfo var hp: Double,
+    @ColumnInfo var critRate: Double,
     @ColumnInfo var defeat: Boolean
 ) : Parcelable {
     @ColumnInfo
@@ -21,9 +22,10 @@ data class Enemy(
     var id: Int = 0
 
     constructor(parcel: Parcel) : this(
-        parcel.readString() ?: "",
-        parcel.readString() ?: "",
         parcel.readInt(),
+        parcel.readInt(),
+        parcel.readInt(),
+        parcel.readDouble(),
         parcel.readDouble(),
         parcel.readDouble(),
         parcel.readDouble(),
@@ -33,12 +35,13 @@ data class Enemy(
     }
 
     override fun writeToParcel(parcel: Parcel, flags: Int) {
-        parcel.writeString(name)
-        parcel.writeString(description)
+        parcel.writeInt(name)
+        parcel.writeInt(description)
         parcel.writeInt(image)
         parcel.writeDouble(defaultGold)
         parcel.writeDouble(attack)
-        parcel.writeDouble(armor)
+        parcel.writeDouble(hp)
+        parcel.writeDouble(critRate)
         parcel.writeByte(if (defeat) 1 else 0)
         parcel.writeInt(id)
     }

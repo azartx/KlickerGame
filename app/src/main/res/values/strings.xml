@@ -1,3 +1,24 @@
 <resources>
     <string name="app_name">Klicker</string>
+
+
+
+    <string name="kaban_1">Кабан</string>
+    <string name="kaban_1_desc">Именно на этих животных охотятся ради мяса.</string>
+
+    <string name="vosstavshi_1">Восставший</string>
+    <string name="vosstavshi_1_desc">Восставший мертвец. Несмотря на внешний вид, может быть опасен.</string>
+
+    <string name="volf_1">Волк</string>
+    <string name="volf_1_desc">В последнее время волки отличаются особой жестокостью.</string>
+
+    <string name="bolotn_zomby_1">Болотный зомби</string>
+    <string name="bolotn_zomby_1_desc">Более опасные противники, чем обычные мертвецы. Могут нападать из засады.</string>
+
+    <string name="medved_1">Медведь</string>
+    <string name="medved_1_desc">Суровый хищник, из-за голода готовый нападать на людские поселения.</string>
+
+    <string name="kisl_zomby_1">Кислотный зомби</string>
+    <string name="kisl_zomby_1_desc">Один из видов зомби, опасен кислотными выделениями.</string>
+
 </resources>
