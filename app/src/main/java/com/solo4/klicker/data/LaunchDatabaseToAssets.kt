@@ -84,4 +84,19 @@ class LaunchDatabaseToAssets {
 
     }
 
+    fun addMediumEnemiesToDb() {
+
+        db.getEnemiesDao().addEnemy(Enemy(
+            name = R.string.kisl_zomby_1,
+            description = R.string.kisl_zomby_1_desc,
+            image = R.drawable.enemy_easy_volf,
+            defaultGold = 220.0,
+            attack = 150.0,
+            hp = 500.0,
+            critRate = 85.0,
+            defeat = false
+        ))
+
+    }
+
 }

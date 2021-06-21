@@ -1,7 +1,11 @@
 <resources>
+
+    <!--**********************APP STRING RESOURCES*******************************-->
+
     <string name="app_name">Klicker</string>
 
-
+    <!--*****************************************************************-->
+    <!--********************EASY ENEMIES*********************************-->
 
     <string name="kaban_1">Кабан</string>
     <string name="kaban_1_desc">Именно на этих животных охотятся ради мяса.</string>
@@ -20,5 +24,40 @@
 
     <string name="kisl_zomby_1">Кислотный зомби</string>
     <string name="kisl_zomby_1_desc">Один из видов зомби, опасен кислотными выделениями.</string>
+
+    <!--*******************************************************************-->
+    <!--********************MEDIUM ENEMIES*********************************-->
+
+    <string name="alfa_kaban_2">Альфа-Кабан</string>
+    <string name="alfa_kaban_2_desc">Мифиеский зверь, о котором ходили легенды, выходит на охоту.</string>
+
+    <string name="mizgir_2">Мизгирь</string>
+    <string name="mizgir_2_desc">Древний мифический паук, в которого, до настоящего времени, верил не каждый.</string>
+
+    <string name="alfa_volf_2">Альфа-Волк</string>
+    <string name="alfa_volf_2_desc">Предводитель волчьей стаи, сильнейший из них.</string>
+
+    <string name="gargyliya_2">Гаргулия</string>
+    <string name="gargyliya_2_desc">До недавних времен это были просто статуи, оставшиеся от старого мира.</string>
+
+    <string name="alfa_medved_2">Альфа-Медведь</string>
+    <string name="alfa_medved_2_desc">Кажется, это создание - само воплощение силы.</string>
+
+    <string name="traig_2">Трайг</string>
+    <string name="traig_2_desc">Древний и сильный. Говорят, его создали еще первые боги.</string>
+
+    <!--*****************************************************************-->
+    <!--***********************HARD ENEMIES******************************-->
+
+    <string name="alive_fear_3">Оживший ужас</string>
+    <string name="alive_fear_3_desc">Мерзкое создание.. Интересно, для чего братья это создали?</string>
+
+    <string name="ice_3">Трехглавый лёд</string>
+    <string name="ice_3_desc">Созданое больным разумом братьев существо.</string>
+
+    <string name="blood_solder_3">Кровавый страж</string>
+    <string name="blood_solder_3_desc">Существо, созданое братьями для личной охраны.</string>
+
+    <!--*****************************************************************-->
 
 </resources>
