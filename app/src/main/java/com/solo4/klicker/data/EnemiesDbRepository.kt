@@ -14,7 +14,7 @@ class EnemiesDbRepository(context: Context) {
 
     suspend fun getEnemiesListByLevel(enemyLevel: Int) = withContext(threadIO) {
         val list = database.getEnemiesDao().getEnemiesByLevel(enemyLevel)
-        //closeDb()
+        closeDb()
         return@withContext list
     }
 

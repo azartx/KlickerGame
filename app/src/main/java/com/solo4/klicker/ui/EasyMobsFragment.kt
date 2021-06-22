@@ -10,6 +10,12 @@ import com.solo4.klicker.data.Enemy
 import com.solo4.klicker.databinding.EasyMobsFragmentBinding
 import com.solo4.klicker.utils.Constants.ARENA_ACTIVITY
 import com.solo4.klicker.utils.Constants.ARENA_ENEMY_LINK
+import com.solo4.klicker.utils.Constants.ENEMY_EASY
+import com.solo4.klicker.utils.Constants.ENEMY_EASY_PREVIEW_FRAGMENT
+import com.solo4.klicker.utils.Constants.ENEMY_HARD
+import com.solo4.klicker.utils.Constants.ENEMY_HARD_PREVIEW_FRAGMENT
+import com.solo4.klicker.utils.Constants.ENEMY_MEDIUM
+import com.solo4.klicker.utils.Constants.ENEMY_MEDIUM_PREVIEW_FRAGMENT
 
 class EasyMobsFragment : Fragment(R.layout.easy_mobs_fragment) {
 
@@ -39,9 +45,16 @@ class EasyMobsFragment : Fragment(R.layout.easy_mobs_fragment) {
             }
         }
         easyEnemyPreviewAdapter = EnemySwipeAdapter(onEnemyPreviewClickListener)
-        easyEnemyPreviewAdapter.enemiesFromDb(1, view.context)
+        easyEnemyPreviewAdapter.enemiesFromDb(getSelectedEnemyLevel(), view.context)
         binding.enemiesEasy.adapter = easyEnemyPreviewAdapter
 
+    }
+
+    fun getSelectedEnemyLevel(): Int {
+        if (arguments?.containsKey(ENEMY_EASY_PREVIEW_FRAGMENT) == true) return ENEMY_EASY
+        else if (arguments?.containsKey(ENEMY_MEDIUM_PREVIEW_FRAGMENT) == true) return ENEMY_MEDIUM
+        else if (arguments?.containsKey(ENEMY_HARD_PREVIEW_FRAGMENT) == true) return ENEMY_HARD
+        else return 1
     }
 
 }

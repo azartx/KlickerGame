@@ -9,6 +9,12 @@ import com.solo4.klicker.utils.Constants.ENEMY_EASY
 import com.solo4.klicker.utils.Constants.ENEMY_HARD
 import com.solo4.klicker.utils.Constants.ENEMY_MEDIUM
 import com.solo4.klicker.databinding.ActivityMainBinding
+import com.solo4.klicker.utils.Constants.ENEMY_EASY_PREVIEW_FRAGMENT
+import com.solo4.klicker.utils.Constants.ENEMY_EASY_STR
+import com.solo4.klicker.utils.Constants.ENEMY_HARD_PREVIEW_FRAGMENT
+import com.solo4.klicker.utils.Constants.ENEMY_HARD_STR
+import com.solo4.klicker.utils.Constants.ENEMY_MEDIUM_PREVIEW_FRAGMENT
+import com.solo4.klicker.utils.Constants.ENEMY_MEDIUM_STR
 
 class MainActivity : AppCompatActivity() {
 
@@ -21,15 +27,27 @@ class MainActivity : AppCompatActivity() {
         setContentView(view)
 
         binding.easyButton.setOnClickListener {
-            openFragment(ENEMY_EASY)
+            Bundle().run {
+                putInt(ENEMY_EASY_STR, ENEMY_EASY)
+                openFragment(ENEMY_EASY, this)
+            }
+
+
         }
 
         binding.mediumButton.setOnClickListener {
-            openFragment(ENEMY_MEDIUM)
+            Bundle().run {
+                putInt(ENEMY_MEDIUM_STR, ENEMY_MEDIUM)
+                openFragment(ENEMY_MEDIUM, this)
+            }
+
         }
 
         binding.hardButton.setOnClickListener {
-            openFragment(ENEMY_HARD)
+            Bundle().run {
+                putInt(ENEMY_HARD_STR, ENEMY_HARD)
+                openFragment(ENEMY_HARD, this)
+            }
         }
 
         /*LaunchDatabaseToAssets().run {
@@ -42,27 +60,29 @@ class MainActivity : AppCompatActivity() {
 
     }
 
-    private fun openFragment(enemyComplexity: Int) {
+    private fun openFragment(enemyComplexity: Int, bundle: Bundle?) {
         when (enemyComplexity) {
             ENEMY_EASY -> {
                 supportFragmentManager.beginTransaction()
-                    .add(R.id.mobsFragmentContainer, EasyMobsFragment::class.java, null)
-                    .addToBackStack("")
+                    .add(R.id.mobsFragmentContainer, EasyMobsFragment::class.java, bundle)
+                    .addToBackStack(ENEMY_EASY_PREVIEW_FRAGMENT)
                     .commit()
             }
 
             ENEMY_MEDIUM -> {
-                Toast.makeText(applicationContext, "MEDIUM", Toast.LENGTH_LONG).show()
+                supportFragmentManager.beginTransaction()
+                    .add(R.id.mobsFragmentContainer, EasyMobsFragment::class.java, bundle)
+                    .addToBackStack(ENEMY_MEDIUM_PREVIEW_FRAGMENT)
+                    .commit()
             }
 
             ENEMY_HARD -> {
-                Toast.makeText(applicationContext, "HARD", Toast.LENGTH_LONG).show()
+                supportFragmentManager.beginTransaction()
+                    .add(R.id.mobsFragmentContainer, EasyMobsFragment::class.java, bundle)
+                    .addToBackStack(ENEMY_HARD_PREVIEW_FRAGMENT)
+                    .commit()
             }
         }
-    }
-
-    fun qwe() {
-
     }
 
 }
