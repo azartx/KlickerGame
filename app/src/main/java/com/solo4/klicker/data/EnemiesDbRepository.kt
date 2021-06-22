@@ -9,7 +9,7 @@ import kotlinx.coroutines.withContext
 class EnemiesDbRepository(context: Context) {
 
     //private val mainScope = CoroutineScope(Dispatchers.Main + Job())
-    private val database = EnemiesDatabase.init(context)
+    private val database = EnemiesDatabase.initSecond(context)
     private val threadIO = Dispatchers.IO
 
     suspend fun getEnemiesListByLevel(enemyLevel: Int) = withContext(threadIO) {

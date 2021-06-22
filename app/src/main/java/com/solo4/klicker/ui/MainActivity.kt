@@ -26,6 +26,15 @@ class MainActivity : AppCompatActivity() {
         val view = binding.root
         setContentView(view)
 
+        /*LaunchDatabaseToAssets().apply {
+            launchDb(applicationContext)
+            addEasyEnemiesToDb()
+            addMediumEnemiesToDb()
+            addHardEnemiesToDb()
+            closeDb()
+        }*/
+
+
         binding.easyButton.setOnClickListener {
             Bundle().run {
                 putInt(ENEMY_EASY_STR, ENEMY_EASY)

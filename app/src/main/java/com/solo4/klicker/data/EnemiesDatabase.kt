@@ -10,12 +10,15 @@ abstract class EnemiesDatabase : RoomDatabase() {
     abstract fun getEnemiesDao(): EnemiesDao
 
     companion object {
-        fun init(context: Context) =
+        fun initFirst(context: Context) =
             Room.databaseBuilder(context, EnemiesDatabase::class.java, "EnemiesDatabase")
                 .createFromAsset("databases/EnemiesDatabase.db")
                 .fallbackToDestructiveMigration()
-                .allowMainThreadQueries()
                 .build()
 
+        fun initSecond(context: Context) =
+            Room.databaseBuilder(context, EnemiesDatabase::class.java, "EnemiesDatabase")
+                .fallbackToDestructiveMigration()
+                .build()
     }
 }
