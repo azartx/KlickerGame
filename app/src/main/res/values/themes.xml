@@ -16,6 +16,7 @@
 
     // стиль лаунч активити
     <style name="splashTheme" parent="Theme.AppCompat.NoActionBar">
-        <item name="android:windowBackground">@color/black</item>
+        <!--<item name="android:windowBackground">@drawable/load_screen_background</item>-->
+        <item name="android:layout">@layout/activity_launch_screen</item>
     </style>
 </resources>

@@ -66,4 +66,7 @@ dependencies {
 
     implementation 'org.jetbrains.kotlinx:kotlinx-coroutines-core:1.5.0'
 
+    // progress bar
+    implementation 'com.github.VladimirWrites:Lemniscate:2.0.2'
+
 }
