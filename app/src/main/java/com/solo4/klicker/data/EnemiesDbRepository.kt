@@ -8,23 +8,20 @@ class EnemiesDbRepository(val context: Context) {
     //private val mainScope = CoroutineScope(Dispatchers.Main + Job())
     private lateinit var database: EnemiesDatabase
     private val threadIO = Dispatchers.IO
-    private val job = Job()
+    private lateinit var job: Job
 
     fun initDatabase() {
-        CoroutineScope(Dispatchers.IO + job).launch {
+        job = CoroutineScope(Dispatchers.IO + Job()).launch {
             database = EnemiesDatabase.initSecond(context)
         }
     }
 
-    fun initDatabaseInLaunchActivity() {
-        CoroutineScope(Dispatchers.Main + job).launch {
-            withContext(Dispatchers.IO) {
-                database = EnemiesDatabase.initSecond(context)
-                closeDb()
-            }
-            job.join()
-        }
+    suspend fun initDatabaseInLaunchActivity() = withContext(Dispatchers.IO) {
+        database = EnemiesDatabase.initSecond(context)
+        closeDb()
+        return@withContext "yes"
     }
+
 
     suspend fun getEnemiesListByLevel(enemyLevel: Int) = withContext(threadIO) {
         initDatabase()

@@ -5,16 +5,19 @@ import androidx.lifecycle.LiveData
 import androidx.lifecycle.MutableLiveData
 import androidx.lifecycle.ViewModel
 import com.solo4.klicker.data.EnemiesDbRepository
+import kotlinx.coroutines.CoroutineScope
+import kotlinx.coroutines.Dispatchers
+import kotlinx.coroutines.launch
 
 class LaunchActivityViewModel: ViewModel() {
 
-    var mutablyLiveData: MutableLiveData<String> = MutableLiveData<String>()
+    private var mutablyLiveData = MutableLiveData<String>()
     val liveData: LiveData<String> = mutablyLiveData
 
     fun launchDatabaseOneTime(context: Context) {
 
-        EnemiesDbRepository(context).apply {
-            initDatabaseInLaunchActivity()
+        CoroutineScope(Dispatchers.Main).launch {
+            mutablyLiveData.value =  EnemiesDbRepository(context).initDatabaseInLaunchActivity()
         }
     }
 

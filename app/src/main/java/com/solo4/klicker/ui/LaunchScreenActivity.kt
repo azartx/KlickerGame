@@ -12,9 +12,18 @@ class LaunchScreenActivity : AppCompatActivity() {
 
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
-        viewModelProvider.get(LaunchActivityViewModel::class.java)
-            .launchDatabaseOneTime(applicationContext)
-        startMainActivity()
+
+        viewModelProvider = ViewModelProvider(this)
+        viewModelProvider.get(LaunchActivityViewModel::class.java).also { viewModel ->
+            viewModel.liveData.observe(this, { callback ->
+                if (callback == "yes") {
+                    startMainActivity()
+                }
+            })
+            viewModel.launchDatabaseOneTime(applicationContext)
+        }
+
+
     }
 
     private fun startMainActivity() {

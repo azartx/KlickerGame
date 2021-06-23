@@ -58,24 +58,4 @@ class EasyMobsFragment : Fragment(R.layout.easy_mobs_fragment) {
         }
     }
 
-    override fun onPause() {
-        super.onPause()
-        Log.i("FFQQ", "onPause")
-    }
-
-    override fun onStop() {
-        super.onStop()
-        Log.i("FFQQ", "onStop")
-    }
-
-    override fun onDestroy() {
-        super.onDestroy()
-        Log.i("FFQQ", "onDestroy")
-    }
-
-    override fun onDetach() {
-        super.onDetach()
-        Log.i("FFQQ", "onDetach")
-    }
-
 }
