@@ -9,6 +9,7 @@ import com.solo4.klicker.data.EnemySwipeAdapter
 import com.solo4.klicker.R
 import com.solo4.klicker.data.Enemy
 import com.solo4.klicker.databinding.EasyMobsFragmentBinding
+import com.solo4.klicker.ui.viewModels.EasyMobsViewModel
 import com.solo4.klicker.utils.Constants.ARENA_ACTIVITY
 import com.solo4.klicker.utils.Constants.ARENA_ENEMY_LINK
 import com.solo4.klicker.utils.Constants.ENEMY_EASY

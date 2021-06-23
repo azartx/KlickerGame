@@ -1,4 +1,4 @@
-package com.solo4.klicker.ui
+package com.solo4.klicker.ui.viewModels
 
 import androidx.lifecycle.LiveData
 import androidx.lifecycle.MutableLiveData
