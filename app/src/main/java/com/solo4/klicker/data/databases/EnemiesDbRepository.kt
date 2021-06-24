@@ -1,6 +1,7 @@
-package com.solo4.klicker.data
+package com.solo4.klicker.data.databases
 
 import android.content.Context
+import com.solo4.klicker.data.databases.EnemiesDatabase
 import kotlinx.coroutines.*
 
 class EnemiesDbRepository(val context: Context) {

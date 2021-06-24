@@ -7,6 +7,7 @@ import android.view.ViewGroup
 import android.widget.ImageView
 import androidx.recyclerview.widget.RecyclerView
 import com.solo4.klicker.R
+import com.solo4.klicker.data.databases.EnemiesDbRepository
 import kotlinx.coroutines.*
 
 class EnemySwipeAdapter(private var enemyPreviewClickListener: OnEnemyPreviewClickListener) :

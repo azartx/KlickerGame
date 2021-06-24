@@ -1,8 +1,10 @@
-package com.solo4.klicker.data
+package com.solo4.klicker.utils
 
 import android.content.Context
 import android.util.Log
 import com.solo4.klicker.R
+import com.solo4.klicker.data.Enemy
+import com.solo4.klicker.data.databases.EnemiesDatabase
 
 class LaunchDatabaseToAssets {
 
@@ -41,7 +43,8 @@ class LaunchDatabaseToAssets {
 
     fun addEasyEnemiesToDb() {
 
-        db.getEnemiesDao().addEnemy(Enemy(
+        db.getEnemiesDao().addEnemy(
+            Enemy(
             level = 1,
             name = R.string.kaban_1,
             description = R.string.kaban_1_desc,
@@ -51,9 +54,11 @@ class LaunchDatabaseToAssets {
             hp = 100.0,
             critRate = 0.0,
             defeat = false
-        ))
+        )
+        )
 
-        db.getEnemiesDao().addEnemy(Enemy(
+        db.getEnemiesDao().addEnemy(
+            Enemy(
             level = 1,
             name = R.string.vosstavshi_1,
             description = R.string.vosstavshi_1_desc,
@@ -63,9 +68,11 @@ class LaunchDatabaseToAssets {
             hp = 200.0,
             critRate = 60.0,
             defeat = false
-        ))
+        )
+        )
 
-        db.getEnemiesDao().addEnemy(Enemy(
+        db.getEnemiesDao().addEnemy(
+            Enemy(
             level = 1,
             name = R.string.volf_1,
             description = R.string.vosstavshi_1_desc,
@@ -75,9 +82,11 @@ class LaunchDatabaseToAssets {
             hp = 300.0,
             critRate = 70.0,
             defeat = false
-        ))
+        )
+        )
 
-        db.getEnemiesDao().addEnemy(Enemy(
+        db.getEnemiesDao().addEnemy(
+            Enemy(
             level = 1,
             name = R.string.bolotn_zomby_1,
             description = R.string.bolotn_zomby_1_desc,
@@ -87,9 +96,11 @@ class LaunchDatabaseToAssets {
             hp = 300.0,
             critRate = 60.0,
             defeat = false
-        ))
+        )
+        )
 
-        db.getEnemiesDao().addEnemy(Enemy(
+        db.getEnemiesDao().addEnemy(
+            Enemy(
             level = 1,
             name = R.string.medved_1,
             description = R.string.medved_1_desc,
@@ -99,9 +110,11 @@ class LaunchDatabaseToAssets {
             hp = 500.0,
             critRate = 80.0,
             defeat = false
-        ))
+        )
+        )
 
-        db.getEnemiesDao().addEnemy(Enemy(
+        db.getEnemiesDao().addEnemy(
+            Enemy(
             level = 1,
             name = R.string.kisl_zomby_1,
             description = R.string.kisl_zomby_1_desc,
@@ -111,13 +124,15 @@ class LaunchDatabaseToAssets {
             hp = 500.0,
             critRate = 85.0,
             defeat = false
-        ))
+        )
+        )
 
     }
 
     fun addMediumEnemiesToDb() {
 
-        db.getEnemiesDao().addEnemy(Enemy(
+        db.getEnemiesDao().addEnemy(
+            Enemy(
             level = 2,
             name = R.string.alfa_kaban_2,
             description = R.string.alfa_kaban_2_desc,
@@ -127,9 +142,11 @@ class LaunchDatabaseToAssets {
             hp = 600.0,
             critRate = 65.0,
             defeat = false
-        ))
+        )
+        )
 
-        db.getEnemiesDao().addEnemy(Enemy(
+        db.getEnemiesDao().addEnemy(
+            Enemy(
             level = 2,
             name = R.string.mizgir_2,
             description = R.string.mizgir_2_desc,
@@ -139,9 +156,11 @@ class LaunchDatabaseToAssets {
             hp = 600.0,
             critRate = 70.0,
             defeat = false
-        ))
+        )
+        )
 
-        db.getEnemiesDao().addEnemy(Enemy(
+        db.getEnemiesDao().addEnemy(
+            Enemy(
             level = 2,
             name = R.string.alfa_volf_2,
             description = R.string.alfa_volf_2_desc,
@@ -151,9 +170,11 @@ class LaunchDatabaseToAssets {
             hp = 700.0,
             critRate = 70.0,
             defeat = false
-        ))
+        )
+        )
 
-        db.getEnemiesDao().addEnemy(Enemy(
+        db.getEnemiesDao().addEnemy(
+            Enemy(
             level = 2,
             name = R.string.gargyliya_2,
             description = R.string.gargyliya_2_desc,
@@ -163,9 +184,11 @@ class LaunchDatabaseToAssets {
             hp = 1000.0,
             critRate = 70.0,
             defeat = false
-        ))
+        )
+        )
 
-        db.getEnemiesDao().addEnemy(Enemy(
+        db.getEnemiesDao().addEnemy(
+            Enemy(
             level = 2,
             name = R.string.alfa_medved_2,
             description = R.string.alfa_medved_2_desc,
@@ -175,9 +198,11 @@ class LaunchDatabaseToAssets {
             hp = 1300.0,
             critRate = 80.0,
             defeat = false
-        ))
+        )
+        )
 
-        db.getEnemiesDao().addEnemy(Enemy(
+        db.getEnemiesDao().addEnemy(
+            Enemy(
             level = 2,
             name = R.string.traig_2,
             description = R.string.traig_2_desc,
@@ -187,13 +212,15 @@ class LaunchDatabaseToAssets {
             hp = 1500.0,
             critRate = 90.0,
             defeat = false
-        ))
+        )
+        )
 
     }
 
     fun addHardEnemiesToDb() {
 
-        db.getEnemiesDao().addEnemy(Enemy(
+        db.getEnemiesDao().addEnemy(
+            Enemy(
             level = 3,
             name = R.string.alive_fear_3,
             description = R.string.alive_fear_3_desc,
@@ -203,9 +230,11 @@ class LaunchDatabaseToAssets {
             hp = 2000.0,
             critRate = 80.0,
             defeat = false
-        ))
+        )
+        )
 
-        db.getEnemiesDao().addEnemy(Enemy(
+        db.getEnemiesDao().addEnemy(
+            Enemy(
             level = 3,
             name = R.string.ice_3,
             description = R.string.ice_3_desc,
@@ -215,9 +244,11 @@ class LaunchDatabaseToAssets {
             hp = 3500.0,
             critRate = 90.0,
             defeat = false
-        ))
+        )
+        )
 
-        db.getEnemiesDao().addEnemy(Enemy(
+        db.getEnemiesDao().addEnemy(
+            Enemy(
             level = 3,
             name = R.string.blood_solder_3,
             description = R.string.blood_solder_3_desc,
@@ -227,7 +258,8 @@ class LaunchDatabaseToAssets {
             hp = 10000.0,
             critRate = 95.0,
             defeat = false
-        ))
+        )
+        )
 
     }
     fun closeDb() {

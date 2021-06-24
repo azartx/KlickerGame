@@ -1,9 +1,10 @@
-package com.solo4.klicker.data
+package com.solo4.klicker.data.databases
 
 import androidx.room.Dao
 import androidx.room.Insert
 import androidx.room.OnConflictStrategy
 import androidx.room.Query
+import com.solo4.klicker.data.Enemy
 
 @Dao
 interface EnemiesDao {
