@@ -6,10 +6,13 @@ import android.util.Log
 import android.view.View
 import android.view.animation.Animation
 import android.view.animation.AnimationUtils
+import androidx.core.view.ViewCompat
 import androidx.lifecycle.ViewModelProvider
 import com.solo4.klicker.R
+import com.solo4.klicker.data.Enemy
 import com.solo4.klicker.databinding.ActivityArenaBinding
 import com.solo4.klicker.ui.viewModels.ArenaViewModel
+import com.solo4.klicker.utils.Constants.ARENA_ENEMY_LINK
 
 /**
  * 1. На арену в агрументы завернута ссылка на объект врага
@@ -23,14 +26,16 @@ class ArenaActivity : AppCompatActivity() {
 
     private lateinit var binding: ActivityArenaBinding
     private lateinit var viewModelProvider: ViewModelProvider
+    private lateinit var pickedEnemy: Enemy
 
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
         binding = ActivityArenaBinding.inflate(layoutInflater)
         val view = binding.root
         setContentView(view)
+        getEnemy()
+        showEnemy(pickedEnemy.image)
         viewModelProvider = ViewModelProvider(this)
-
 
         createAnimatedCounter() //ready? fight!
 
@@ -45,7 +50,23 @@ class ArenaActivity : AppCompatActivity() {
         }
 
 
+    }
 
+    private fun getEnemy() {
+        pickedEnemy = intent.extras?.get(ARENA_ENEMY_LINK) as Enemy
+    }
+
+    fun showEnemy(enemyImage: Int) {
+        /*binding.enemyArenaImageView.apply {
+            //visibility = View.INVISIBLE
+
+            AnimationUtils.loadAnimation(context, R.anim.show_enemy_arena).start()
+        }*/
+        /*binding.enemyArenaImageView.setImageResource(enemyImage)
+        ViewCompat.animate(binding.enemyArenaImageView)
+            .setDuration(1000L)
+            .alpha(1f)
+            .start()*/
     }
 
     private fun createAnimatedCounter() {
@@ -66,6 +87,7 @@ class ArenaActivity : AppCompatActivity() {
                     }
                 }
             }
+
             override fun onAnimationStart(animation: Animation?) {}
             override fun onAnimationRepeat(animation: Animation?) {}
         })
